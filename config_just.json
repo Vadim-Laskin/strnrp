@@ -1,0 +1,18 @@
+{
+	"URL_LAUNCHER":"https://justrp.cdnreact.xyz/files3/release-0.30-florida-0.30.apk",
+	"URL_CACHE":[
+		"http://a0783687.xsph.ru/files.7z.001",
+		"http://a0783687.xsph.ru/files.7z.002",
+		"http://a0783687.xsph.ru/files.7z.003",
+		"http://a0783687.xsph.ru/files.7z.004"
+		
+	],
+	"URL_DATA":"http://a0783687.xsph.rusetting2.7z",
+	"URL_UPDATE_ARCHIVE":"",
+	"URL_SUPPORT":"https://vk.com/strnrp",
+	"URL_API_ONLINE":"https://raw.githubusercontent.com/Vadim-Laskin/strnrp/refs/heads/main/gekas.php",
+	"URL_API_NEWS":"https://raw.githubusercontent.com/Vadim-Laskin/strnrp/refs/heads/main/news_just.json",
+	"URL_FAQ":"http://a0783687.xsph.ru/faq_just.json",
+	"VERSION_LAUNCHER":10,
+	"VERSION_UPDATE_ARCHIVE":"2.50"
+}
