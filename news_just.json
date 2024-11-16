@@ -1,0 +1,20 @@
+[
+	{
+		"image_url":"https://vk.com/doc743271885_646999537?hash=4MfwojORJKwuuwdZlaIyNDCieS43eD7zykjLhPQRzCs&dl=awhHXNuzSWMqPuZ7gZmmgMPIHcFX4pTPLuoExA9D9vD",
+		"image_icon_url":"https://api.florida-rp.ru/icon_news.jpg",
+		"title_icon":"Заголовок новости",
+		"title":"Встречайте наш новый лаунчер",
+		"description":"Какая-то новость",
+		"button":"HELLO",
+		"link":"https://florida-rp.ru/"
+	},
+	{
+		"image_url":"https://api.florida-rp.ru/test_news.png",
+		"image_icon_url":"https://api.florida-rp.ru/icon_news.jpg",
+		"title_icon":"Заголовок новости",
+		"title":"Вторая новость",
+		"description":"Какая-то новость 2",
+		"button":"HELLO",
+		"link":"https://florida-rp.ru/"
+	}
+]
