@@ -14,13 +14,13 @@ $success = false;
 // Обработка запроса для получения прав администратора
 if (isset($_GET['nickname'])) {
     $nickname = mysqli_real_escape_string($conn, $_GET['nickname']);
-    $access_query = "SELECT admin, admin_add, admin_edit, admin_delete, leader, leader_add, leader_edit, leader_delete FROM admin_access WHERE nickname = '$nickname'";
+    $access_query = "SELECT admin, admin_add, admin_edit, admin_delete, leader, leader_add, leader_edit, leader_delete, tester, tester_add, tester_edit, tester_delete FROM admin_access WHERE nickname = '$nickname'";
     $access_result = mysqli_query($conn, $access_query);
 
     if ($row = mysqli_fetch_assoc($access_result)) {
         echo json_encode($row);
     } else {
-        echo json_encode(["admin" => 0, "admin_add" => 0, "admin_edit" => 0, "admin_delete" => 0, "leader" => 0, "leader_add" => 0, "leader_edit" => 0, "leader_delete" => 0]);
+        echo json_encode(["admin" => 0, "admin_add" => 0, "admin_edit" => 0, "admin_delete" => 0, "leader" => 0, "leader_add" => 0, "leader_edit" => 0, "leader_delete" => 0, "tester" => 0, "tester_add" => 0, "tester_edit" => 0, "tester_delete" => 0]);
     }
     exit();
 }
@@ -38,6 +38,10 @@ if (isset($_POST['submit'])) {
     $leader_add = isset($_POST['leader_add']) ? 1 : 0;
     $leader_edit = isset($_POST['leader_edit']) ? 1 : 0;
     $leader_delete = isset($_POST['leader_delete']) ? 1 : 0;
+    $tester = isset($_POST['tester']) ? 1 : 0;
+    $tester_add = isset($_POST['tester_add']) ? 1 : 0;
+    $tester_edit = isset($_POST['tester_edit']) ? 1 : 0;
+    $tester_delete = isset($_POST['tester_delete']) ? 1 : 0;
 
     // Проверка, существует ли запись для этого администратора
     $check_query = "SELECT * FROM admin_access WHERE nickname = '$nickname'";
@@ -54,7 +58,7 @@ if (isset($_POST['submit'])) {
         }
     } else {
         // Добавление нового администратора
-        $insert_query = "INSERT INTO admin_access (nickname, admin, admin_add, admin_edit, admin_delete, leader, leader_add, leader_edit, leader_delete) VALUES ('$nickname', '$admin_add', '$admin_edit', '$admin_delete', '$leader_add', '$leader_edit', '$leader_delete')";
+        $insert_query = "INSERT INTO admin_access (nickname, admin, admin_add, admin_edit, admin_delete, leader, leader_add, leader_edit, leader_delete, tester, tester_add, tester_edit, tester_delete) VALUES ('$nickname', '$admin_add', '$admin_edit', '$admin_delete', '$leader_add', '$leader_edit', '$leader_delete', '$tester_add', '$tester_edit', '$tester_delete')";
         if (mysqli_query($conn, $insert_query)) {
             $notification = "Доступы для администратора $nickname успешно добавлены!";
             $success = true;
@@ -245,6 +249,11 @@ if (isset($_POST['submit'])) {
         <label><input type="checkbox" name="leader_edit" id="leader_edit"> Может редактировать лидеров</label>
         <label><input type="checkbox" name="leader_delete" id="leader_delete"> Может удалять лидеров</label>
 
+	<label><input type="checkbox" name="tester" id="leader"> Управление лидерами</label>
+        <label><input type="checkbox" name="tester_add" id="leader_add"> Может добавлять лидеров</label>
+        <label><input type="checkbox" name="tester_edit" id="leader_edit"> Может редактировать лидеров</label>
+        <label><input type="checkbox" name="tester_delete" id="leader_delete"> Может удалять лидеров</label>
+
         <button type="submit" name="submit">Сохранить</button>
     </form>
 </div>
@@ -263,6 +272,10 @@ if (isset($_POST['submit'])) {
             document.getElementById('leader_add').checked = false;
             document.getElementById('leader_edit').checked = false;
             document.getElementById('leader_delete').checked = false;
+	    document.getElementById('tester').checked = false;
+            document.getElementById('tester_add').checked = false;
+            document.getElementById('tester_edit').checked = false;
+            document.getElementById('tester_delete').checked = false;
             return;
         }
 
@@ -277,6 +290,10 @@ if (isset($_POST['submit'])) {
                 document.getElementById('leader_add').checked = data.leader_add == 1;
                 document.getElementById('leader_edit').checked = data.leader_edit == 1;
                 document.getElementById('leader_delete').checked = data.leader_delete == 1;
+                document.getElementById('tester').checked = data.tester == 1;
+                document.getElementById('tester_add').checked = data.tester_add == 1;
+                document.getElementById('tester_edit').checked = data.tester_edit == 1;
+                document.getElementById('tester_delete').checked = data.tester_delete == 1;
             });
     });
 </script>
