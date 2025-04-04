@@ -18,6 +18,7 @@ $access = $result->fetch_assoc();
 
 $admin_access = $access['admin'] ?? 0;
 $leader_access = $access['leader'] ?? 0;
+$tester_access = $access['tester'] ?? 0;
 ?>
 
 <!DOCTYPE html>
@@ -133,6 +134,12 @@ $leader_access = $access['leader'] ?? 0;
                 <?php if ($leader_access == 1): ?>
                     <button onclick="window.location.href='./new/leader_table.php'">
                         <i class="fas fa-user-tie icon"></i> Лидеры
+                    </button>
+                <?php endif; ?>
+
+                <?php if ($tester_access == 1): ?>
+                    <button onclick="window.location.href='./new/tester_table.php'">
+                        <i class="fas fa-user-tie icon"></i> Тестеры
                     </button>
                 <?php endif; ?>
 
