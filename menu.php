@@ -143,7 +143,7 @@ $tester_access = $access['tester'] ?? 0;
                     </button>
                 <?php endif; ?>
 
-                <?php if ($admin_access == 0 && $leader_access == 0): ?>
+                <?php if ($admin_access == 0 && $leader_access == 0 && $tester_access == 0): ?>
                     <p>К сожалению, у вас нет доступа!</p>
                 <?php endif; ?>
             </div>
