@@ -12,7 +12,7 @@ include 'db.php';
 
 // Получаем права текущего администратора
 $current_user = $_SESSION['name'];
-$query = "SELECT * FROM tester_access WHERE nickname = '$current_user'";
+$query = "SELECT * FROM admin_access WHERE nickname = '$current_user'";
 $result = mysqli_query($conn, $query);
 
 // Если данные найдены, устанавливаем переменные доступа
