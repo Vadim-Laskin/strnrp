@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `site_admins`
+-- Структура таблицы `site_testers`
 --
 
-CREATE TABLE `site_admins` (
+CREATE TABLE `site_testers` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `level` int(11) NOT NULL,
@@ -39,16 +39,10 @@ CREATE TABLE `site_admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Дамп данных таблицы `site_admins`
+-- Дамп данных таблицы `site_testers`
 --
 
-INSERT INTO `site_admins` (`id`, `name`, `level`, `prefix`, `appointed_date`, `vk_link`, `vk_name`, `inactive_until`) VALUES
-(14, 'Christian_Allford', 6, 'Гл. Админ', '2025-03-26', 'https://vk.com/vlad19283', 'Vlad Karpovich', NULL),
-(15, 'Nikita_Dorian', 5, 'Куратор', '2025-03-26', 'https://vk.com/nuchto_ne_ustuna', 'Nikita Alexandrovich', NULL),
-(16, 'Zhan_Maev', 3, 'ГС Гос', '2025-03-26', 'https://vk.com/id829093885', 'Nikita Efimov', NULL),
-(17, 'Vova_Relax', 3, 'ГС ОПГ', '2025-03-26', 'https://vk.com/glrelax', 'Qwe Relax', NULL),
-(18, 'Volodya_Sakurai', 3, 'зГС Гос', '2025-03-26', 'https://vk.com/volodya_sakurai', 'Vladimir Pyatinov', NULL),
-(19, 'Rosa_Gallagher', 2, 'Администратор', '2025-03-26', 'https://vk.com/sigmamahahaha', 'Gaga Ledi', NULL),
+INSERT INTO `site_testers` (`id`, `name`, `level`, `prefix`, `appointed_date`, `vk_link`, `vk_name`, `inactive_until`) VALUES
 (20, 'Agafia_Chuma', 2, 'Администратор', '2025-03-26', 'https://vk.com/chupupk', 'Margarita Margaritau', NULL);
 
 --
@@ -56,9 +50,9 @@ INSERT INTO `site_admins` (`id`, `name`, `level`, `prefix`, `appointed_date`, `v
 --
 
 --
--- Индексы таблицы `site_admins`
+-- Индексы таблицы `site_testers`
 --
-ALTER TABLE `site_admins`
+ALTER TABLE `site_testers`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -66,9 +60,9 @@ ALTER TABLE `site_admins`
 --
 
 --
--- AUTO_INCREMENT для таблицы `site_admins`
+-- AUTO_INCREMENT для таблицы `site_testers`
 --
-ALTER TABLE `site_admins`
+ALTER TABLE `site_testers`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
