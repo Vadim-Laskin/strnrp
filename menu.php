@@ -9,7 +9,7 @@ $is_vadim = ($_SESSION['name'] === 'Vadim_Laskin');
 
 $username = $_SESSION['name']; 
 
-$query = "SELECT admin, leader FROM admin_access WHERE nickname = ?";
+$query = "SELECT admin, leader, tester FROM admin_access WHERE nickname = ?";
 $stmt = $conn->prepare($query);
 $stmt->bind_param("s", $username);
 $stmt->execute();
