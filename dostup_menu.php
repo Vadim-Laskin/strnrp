@@ -49,7 +49,7 @@ if (isset($_POST['submit'])) {
 
     if (mysqli_num_rows($check_result) > 0) {
         // Обновление прав администратора
-        $update_query = "UPDATE admin_access SET admin = '$admin', admin_add = '$admin_add', admin_edit = '$admin_edit', admin_delete = '$admin_delete', leader = '$leader', leader_add = '$leader_add', leader_edit = '$leader_edit', leader_delete = '$leader_delete' WHERE nickname = '$nickname'";
+        $update_query = "UPDATE admin_access SET admin = '$admin', admin_add = '$admin_add', admin_edit = '$admin_edit', admin_delete = '$admin_delete', leader = '$leader', leader_add = '$leader_add', leader_edit = '$leader_edit', leader_delete = '$leader_delete', tester = '$tester', tester_add = '$tester_add', tester_edit = '$tester_edit', tester_delete = '$tester_delete' WHERE nickname = '$nickname'";
         if (mysqli_query($conn, $update_query)) {
             $notification = "Доступы для администратора $nickname обновлены!";
             $success = true;
