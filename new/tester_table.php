@@ -17,9 +17,9 @@ $result = mysqli_query($conn, $query);
 
 // Если данные найдены, устанавливаем переменные доступа
 if ($row = mysqli_fetch_assoc($result)) {
-    $admin_add = $row['tester_add'];
-    $admin_edit = $row['tester_edit'];
-    $admin_delete = $row['tester_delete'];
+    $tester_add = $row['tester_add'];
+    $tester_edit = $row['tester_edit'];
+    $tester_delete = $row['tester_delete'];
 } else {
     // Если доступа нет, устанавливаем все переменные в 0
     $tester_add = $tester_edit = $tester_delete = 0;
